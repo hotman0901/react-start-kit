@@ -7,4 +7,5 @@ export const ButtonDiv = styled.button`
     cursor: pointer;
     text-align: center;
     margin-left: 10px;
+    background-color: #fff;
 `;

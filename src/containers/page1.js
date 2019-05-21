@@ -3,8 +3,9 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as todoActions from '../redux/actions/todo';
-import '../index.scss';
+import '../style/scss/index.scss';
 import { strim } from '../utils.js/string';
+import { ButtonDiv } from '../widget/button';
 
 class Page1 extends Component {
     constructor(props) {
@@ -64,10 +65,8 @@ class Page1 extends Component {
             <div className="wrapper-col index">
                 <h1>Redux Todo List</h1>
                 <div className="wrapper-row">
-                    <input type="text" onChange={this.handleInput} value={todo} />
-                    <div className="button" onClick={this.addTodosubmit} role="presentation">
-                        sumbit
-                    </div>
+                    <input className="input" type="text" onChange={this.handleInput} value={todo} />
+                    <ButtonDiv onClick={this.addTodosubmit}>submit</ButtonDiv>
                 </div>
                 {this.renderTodoList()}
             </div>

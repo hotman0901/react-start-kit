@@ -4,6 +4,7 @@ import createRoutes from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import stores from './redux/store';
+import { Normalize } from 'styled-normalize';
 
 // 建立store
 const store = stores();
@@ -12,6 +13,7 @@ const routes = createRoutes();
 
 const App = () => (
     <Provider store={store}>
+        <Normalize />
         <BrowserRouter>{routes}</BrowserRouter>
     </Provider>
 );

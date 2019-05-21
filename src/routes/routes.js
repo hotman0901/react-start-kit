@@ -5,10 +5,12 @@ import Page2 from '../containers/page2';
 
 export default function createRoutes() {
     return (
-        <Switch>
-            <Route exact path="/todo" component={Page1} />
-            <Route exact path="/page2" component={Page2} />
-            <Route exact path="/" component={Page1} />
-        </Switch>
+        <div>
+            <Switch>
+                <Route exact path="/todo" component={Page1} />
+                <Route exact path="/page2" component={Page2} />
+                <Route exact path="/" component={Page1} />
+            </Switch>
+        </div>
     );
 }

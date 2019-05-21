@@ -447,6 +447,12 @@ module.exports = function(webpackEnv) {
                                 name: 'static/media/[name].[hash:8].[ext]',
                             },
                         },
+                        // add scss 編譯
+                        {
+                            test: /\.scss|\.sass$/,
+                            include: paths.appSrc,
+                            loaders: ['style', 'css', 'sass'],
+                        },
                         // ** STOP ** Are you adding a new loader?
                         // Make sure to add the new loader(s) before the "file" loader.
                     ],

@@ -12,7 +12,7 @@
     flex-direction: row;
 }
 
-.wrapper-row>* {
+.wrapper-row > * {
     flex: 1;
 }
 
@@ -22,6 +22,10 @@
     cursor: pointer;
     text-align: center;
     margin-left: 10px;
+}
+
+.input {
+    border: 1px solid #9a9a9a;
 }
 
 .list {

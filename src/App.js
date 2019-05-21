@@ -1,21 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import createRoutes from './routes/routes';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import stores from './redux/store';
+import { Normalize } from 'styled-normalize';
 
-function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
-}
+// 建立store
+const store = stores();
+// 建立路由
+const routes = createRoutes();
+
+const App = () => (
+    <Provider store={store}>
+        <Normalize />
+        <BrowserRouter>{routes}</BrowserRouter>
+    </Provider>
+);
 
 export default App;

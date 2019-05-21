@@ -1,0 +1,42 @@
+.index {
+    padding: 15px 40px;
+}
+
+.wrapper-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper-row > * {
+    flex: 1;
+}
+
+.button {
+    padding: 5px 10px;
+    border: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.list {
+    margin-top: 15px;
+    border: 1px solid #66666680;
+    padding: 10px 15px;
+    box-shadow: -1px 7px 9px 0 rgba(0, 0, 0, 0.24);
+}
+
+.delete {
+    text-align: right;
+    cursor: pointer;
+    max-width: 25px;
+}
+
+h5 {
+    margin: 0;
+}

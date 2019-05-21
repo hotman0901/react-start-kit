@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as todoActions from '../redux/actions/todo';
-import '../App.css';
+import '../index.scss';
 import { strim } from '../utils.js/string';
 
 class Page1 extends Component {

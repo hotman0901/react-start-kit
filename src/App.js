@@ -4,16 +4,7 @@ import createRoutes from './routes/routes';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import stores from './redux/store';
-import { normalize } from 'styled-normalize';
-import { createGlobalStyle } from 'styled-components';
-
-// normalize css
-const GlobalStyle = createGlobalStyle`
-    ${normalize}
-    body {
-        padding: 0;
-    }
-`;
+import { Normalize } from 'styled-normalize';
 
 // 建立store
 const store = stores();
@@ -22,7 +13,7 @@ const routes = createRoutes();
 
 const App = () => (
     <Provider store={store}>
-        <GlobalStyle />
+        <Normalize />
         <BrowserRouter>{routes}</BrowserRouter>
     </Provider>
 );

@@ -44,6 +44,7 @@
         "postcss-normalize": "7.0.1",
         "postcss-preset-env": "6.6.0",
         "postcss-safe-parser": "4.0.1",
+        "prop-types": "^15.7.2",
         "react": "^16.8.6",
         "react-app-polyfill": "^1.0.1",
         "react-dev-utils": "^9.0.1",
@@ -64,7 +65,7 @@
         "workbox-webpack-plugin": "4.2.0"
     },
     "scripts": {
-        "start": "node scripts/start.js",
+        "start": "REACT_APP_ENV=dev node scripts/start.js",
         "build": "node scripts/build.js",
         "test": "node scripts/test.js",
         "lint": "eslint .",
@@ -73,10 +74,9 @@
     "eslintConfig": {
         "extends": "wesbos",
         "rules": {
-            "no-console": 2,
-            " no-use-before-define": 0,
-            "no-lonely-if": 0,
+            "no-console": "off",
             "no-use-before-define": 0,
+            "no-lonely-if": 0,
             "global-require": 0,
             "import/no-dynamic-require": 0,
             "no-nested-ternary": 0,

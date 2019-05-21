@@ -3,19 +3,21 @@ import update from 'immutability-helper';
 
 // inital
 const initialState = {
-    list: [],
+    todos: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
     switch (action.type) {
         case actionTypes.ADD_TODO: {
             return update(state, {
-                list: { $set: [...state.list, action.payload] },
+                todos: { $set: [...state.todos, action.payload] },
             });
         }
         case actionTypes.DELETE_TODO: {
+            const { payload } = action;
+            const data = state.todos.filter(o => payload !== o.id);
             return update(state, {
-                list: { $set: [...state.list].filter(item => action.payload !== item) },
+                todos: { $set: data },
             });
         }
         default:

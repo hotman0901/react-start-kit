@@ -1,0 +1,25 @@
+{
+    // ***需先安裝eslint 與 prettier plugIn****
+    // eslint 設定
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+
+    // pretiier 設定
+    "prettier.eslintIntegration": true,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true,
+    "prettier.bracketSpacing": true,
+    "prettier.arrowParens": "always",
+    "prettier.proseWrap": "always",
+    "[javascript]": {
+        "editor.formatOnSave": false
+    },
+
+    // These are all my auto-save configs
+    "editor.formatOnSave": true,
+    "[javascriptreact]": {
+        "editor.formatOnSave": false
+    },
+    // Optional BUT IMPORTANT: If you have the prettier extension enabled for other languages like CSS and HTML, turn it off for JS since we are doing it through Eslint already
+    "prettier.disableLanguages": ["javascript", "javascriptreact"]
+}

@@ -79,7 +79,7 @@
         "predeploy": "npm run build",
         "deploy": "gh-pages -d build"
     },
-    "homepage": "https://hotman0901.github.io/react-start-kit/ ",
+    "homepage": "https://hotman0901.github.io/react-start-kit",
     "eslintConfig": {
         "extends": "wesbos",
         "rules": {

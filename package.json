@@ -80,7 +80,7 @@
         "test": "node scripts/test.js",
         "lint": "eslint .",
         "lint:fix": "eslint . --fix",
-        "predeploy": "npm run build REACT_APP_BASEURL=/react-start-kit",
+        "predeploy": "npm run build REACT_APP_BASEURL=gitpage",
         "deploy": "gh-pages -d build"
     },
     "homepage": "https://hotman0901.github.io/react-start-kit",

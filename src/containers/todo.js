@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import * as todoActions from '../redux/actions/todo';
 import '../style/scss/index.scss';
 import { strim } from '../utils.js/string';
 import { ButtonDiv } from '../widget/button';
+import produce from 'immer';
 
-class Page1 extends Component {
+class Todo extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,9 +17,15 @@ class Page1 extends Component {
     }
 
     handleInput = e => {
-        this.setState({
-            todo: e.target.value,
-        });
+        // this.setState({
+        //     todo: e.target.value,
+        // });
+        const { value } = e.target;
+        this.setState(
+            produce(draft => {
+                draft.todo = value;
+            })
+        );
     };
 
     addTodosubmit = () => {
@@ -32,9 +38,14 @@ class Page1 extends Component {
 
         todoAction.addTodo({ id: new Date() / 1, text: todo });
 
-        this.setState({
-            todo: '',
-        });
+        // this.setState({
+        //     todo: '',
+        // });
+        this.setState(
+            produce(draft => {
+                draft.todo = '';
+            })
+        );
     };
 
     deletTodoSubmit = id => {
@@ -64,7 +75,6 @@ class Page1 extends Component {
         const { todo } = this.state;
         return (
             <div className="wrapper-col index">
-                <Link to="/page2">page2</Link>
                 <h1>Redux Todo List</h1>
                 <div className="wrapper-row">
                     <input className="input" type="text" onChange={this.handleInput} value={todo} />
@@ -76,12 +86,12 @@ class Page1 extends Component {
     }
 }
 
-Page1.defaultProps = {
+Todo.defaultProps = {
     todo: {},
     todoAction: {},
 };
 
-Page1.propTypes = {
+Todo.propTypes = {
     todo: PropTypes.object,
     todoAction: PropTypes.object,
 };
@@ -97,4 +107,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Page1);
+)(Todo);

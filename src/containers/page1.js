@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import * as todoActions from '../redux/actions/todo';
 import '../style/scss/index.scss';
 import { strim } from '../utils.js/string';
@@ -63,6 +64,7 @@ class Page1 extends Component {
         const { todo } = this.state;
         return (
             <div className="wrapper-col index">
+                <Link to="/page2">page2</Link>
                 <h1>Redux Todo List</h1>
                 <div className="wrapper-row">
                     <input className="input" type="text" onChange={this.handleInput} value={todo} />

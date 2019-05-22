@@ -7,6 +7,8 @@ In the project directory, you can run:
 
 從 create-react-app eject 後的 SPA 模板
 
+[DEMO](https://hotman0901.github.io/react-start-kit/).
+
 目前功能
 
 1. router

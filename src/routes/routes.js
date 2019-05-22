@@ -8,7 +8,6 @@ export default function createRoutes() {
         <Switch>
             <Route exact path="/todo" component={Page1} />
             <Route exact path="/page2" component={Page2} />
-            <Route exact path="/" component={Page1} />
         </Switch>
     );
 }

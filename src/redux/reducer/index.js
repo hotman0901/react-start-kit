@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
+import { connectRouter } from 'connected-react-router';
 import todo from './todo';
 
-// 有多個reducer 合併用
-const rootReducer = combineReducers({
-    todo,
-});
-
-export default rootReducer;
+export default history =>
+    combineReducers({
+        router: connectRouter(history),
+        todo,
+    });

@@ -5,11 +5,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import createRootReducer from '../reducer';
 
-let basename = '/';
-if (process.env.REACT_APP_BASEURL === 'gitpage') {
-    basename = '/react-start-kit';
-}
-export const history = createBrowserHistory({ basename });
+export const history = createBrowserHistory({ basename: process.env.PUBLIC_URL });
 
 // 判斷要不要開啟REDUX_DEVTOOLS
 export default function configureStore(preloadedState) {

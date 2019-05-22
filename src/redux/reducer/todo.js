@@ -5,11 +5,18 @@ import produce from 'immer';
 // inital
 const initialState = {
     todos: [],
+    loading: '',
 };
 
 /* immer */
 const reducer = produce((draft = initialState, action = {}) => {
     switch (action.type) {
+        case actionTypes.ADD_LOADING: {
+            draft.loading = 'yo1';
+            return;
+            // return draft;
+            // 這兩種都可以
+        }
         case actionTypes.ADD_TODO: {
             draft.todos = [...draft.todos, action.payload];
             return;

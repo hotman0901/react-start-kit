@@ -24,7 +24,7 @@ export default function configureStore(preloadedState) {
             composeEnhancer(applyMiddleware(thunk, epicMiddleware, routerMiddleware(history), logger))
         );
     } else {
-        store = createStore(createRootReducer(history), preloadedState, applyMiddleware(thunk));
+        store = createStore(createRootReducer(history), preloadedState, applyMiddleware(thunk, epicMiddleware));
     }
 
     epicMiddleware.run(rootEpic);

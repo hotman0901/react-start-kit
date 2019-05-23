@@ -6,7 +6,19 @@ import * as types from '../actionTypes/todo';
 // });
 
 // 使用async，必須設置applyMiddleware
-export const addTodo = payload => dispatch => dispatch({ type: types.ADD_TODO, payload });
+// export const addTodo = payload => dispatch => dispatch({ type: types.ADD_TODO$, payload });
+export const addTodo = payload => ({
+    type: types.ADD_TODO$,
+    payload,
+});
+export const addTodSuc = payload => ({
+    type: types.ADD_TODO_SUC,
+    payload,
+});
+export const addTodoErr = payload => ({
+    type: types.ADD_TODO_ERR,
+    payload,
+});
 
 // 可參考下列寫法
 // export const xxx = () => (dispatch) => {
@@ -18,6 +30,14 @@ export const addTodo = payload => dispatch => dispatch({ type: types.ADD_TODO, p
 // }
 
 export const deleteTodo = payload => ({
-    type: types.DELETE_TODO,
+    type: types.DELETE_TODO$,
+    payload,
+});
+export const deleteTodoSuc = payload => ({
+    type: types.DELETE_TODO_SUC,
+    payload,
+});
+export const deleteTodoErr = payload => ({
+    type: types.DELETE_TODO_ERR,
     payload,
 });

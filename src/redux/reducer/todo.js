@@ -10,13 +10,13 @@ const initialState = {
 /* immer */
 const reducer = produce((draft = initialState, action = {}) => {
     switch (action.type) {
-        case actionTypes.ADD_TODO: {
+        case actionTypes.ADD_TODO_SUC: {
             draft.todos = [...draft.todos, action.payload];
             return;
             // return draft;
             // 這兩種都可以
         }
-        case actionTypes.DELETE_TODO: {
+        case actionTypes.DELETE_TODO_SUC: {
             const { payload } = action;
             draft.todos = draft.todos.filter(o => payload !== o.id);
             return;
